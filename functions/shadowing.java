@@ -1,4 +1,3 @@
-package functions;
 // shadowing in java is basically a practice of using two variables with the same name within the scope that overlaps.
 public class shadowing {
     static int x = 90;                    // this will be shadowed at line 9.     // x is available to everything which is present in the block - public class shadowing.

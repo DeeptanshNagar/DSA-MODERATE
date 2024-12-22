@@ -1,4 +1,3 @@
-package functions;
 import java.util.*;
 
 public class Questions {
