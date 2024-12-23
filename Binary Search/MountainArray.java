@@ -29,4 +29,15 @@ public class MountainArray {
         // more elaboration: at every point of time for start and end, they have the best possible answer till that time.
         return start; // or return end as both are equal.
     }
+
+    // can ignore this : just for the sake of compilation error in the main method in the class Solution in Leetcode1095.java and SearchInMountain.java .
+    public int get(int mid) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'get'");
+    }
+
+    public int length() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'length'");
+    }
 }
