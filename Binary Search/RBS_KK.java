@@ -39,6 +39,7 @@ public class RBS_KK {
         return -1; // element not found.
     }
 
+    // this will not work in duplicate values in the array.
     static int findPivot(int[] arr) {
         int start = 0;
         int end = arr.length - 1;
