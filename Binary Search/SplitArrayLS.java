@@ -12,7 +12,7 @@ public class SplitArrayLS {
             end += nums[i];
         }
 
-        // binary search
+        // binary search 
         while (start < end) {
             // try for the middle as potential ans
             int mid = start + (end - start) / 2;
@@ -23,7 +23,7 @@ public class SplitArrayLS {
             for(int num : nums) {
                 if (sum + num > mid) {
                     // you cannot add this in this subarray, make new one
-                    // say you add this num in new subarray, then sum = num
+                    // say you add this num in new subarray, then sum = num and pieces++
                     sum = num;
                     pieces++;
                 } else {
@@ -38,6 +38,6 @@ public class SplitArrayLS {
             }
 
         }
-        return end; // here start == end
+        return end; // here start == end 
     }
 }
