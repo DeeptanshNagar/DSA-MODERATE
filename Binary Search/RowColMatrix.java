@@ -25,6 +25,6 @@ public class RowColMatrix {
                 col--;
             }
         }
-        return new int[]{-1, -1};   // Not found
+        return new int[]{-1, -1};
     }
 }
