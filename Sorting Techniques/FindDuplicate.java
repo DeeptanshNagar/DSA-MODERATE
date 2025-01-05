@@ -2,7 +2,10 @@
 
 public class FindDuplicate {
     public static void main(String[] args) {
-        
+        int[] nums = {3, 1, 3, 4, 2};  // Example array with a duplicate
+        FindDuplicate finder = new FindDuplicate();
+        int result = finder.findDuplicate(nums);
+        System.out.println("Duplicate number is: " + result);
     }
 
     public int findDuplicate(int[] arr) {
