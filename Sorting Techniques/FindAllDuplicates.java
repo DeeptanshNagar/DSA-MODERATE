@@ -4,6 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FindAllDuplicates {
+    public static void main(String[] args) {
+        FindAllDuplicates finder = new FindAllDuplicates();
+        int[] nums = {4, 3, 2, 7, 8, 2, 3, 1};
+        List<Integer> duplicates = finder.findDuplicates(nums);
+        System.out.println("Duplicates are: " + duplicates); 
+    }
+    
     public List<Integer> findDuplicates(int[] arr) {
         int i = 0;
         while (i < arr.length) {
