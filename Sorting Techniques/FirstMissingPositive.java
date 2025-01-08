@@ -1,4 +1,4 @@
-public class Prblm41 {
+public class FirstMissingPositive {
     public static int firstMissingPositive(int[] arr) {
         int i = 0;
         while (i < arr.length) {
@@ -16,7 +16,7 @@ public class Prblm41 {
         }
         return arr.length + 1;
     }
-    
+
     static void swap(int[] arr, int first, int second) {
         int temp = arr[first];
         arr[first] = arr[second];
