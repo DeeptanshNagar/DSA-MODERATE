@@ -27,5 +27,11 @@ public class Operators {
         // Now the correct working expression will be as follows;
         String ans = new Integer(56) + "" + new ArrayList<>(); // here among 3 one is string type which is empty no problem
         System.out.println(ans); // Output - 56[]
+
+
+
+
+
+        System.out.println("a" + 'b');
     }
 }
