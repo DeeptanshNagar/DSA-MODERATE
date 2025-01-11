@@ -7,7 +7,7 @@ public class StringPerformance {
         // }
 
         // If the purpose was to build a string by concatenating characters, series could be used like this inside the loop:
-        String series = "";
+        String series = "";   
         for (int i = 0; i < 26; i++) {
             char ch = (char)('a' + i);
             series += ch; // This adds each character to the series string.
