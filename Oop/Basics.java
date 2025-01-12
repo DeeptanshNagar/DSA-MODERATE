@@ -34,6 +34,8 @@ public class Basics {
         Student[] students = new Student[5];
         Student kunal = new Student();
 
+        kunal.rno = 13;
+
         System.out.println(kunal.rno);
         System.out.println(kunal.name);
         System.out.println(kunal.marks);
