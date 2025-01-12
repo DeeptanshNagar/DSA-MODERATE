@@ -20,8 +20,8 @@ public class Basics {
 
         // System.out.println(Arrays.toString(students));
 
-        Student student1;  // declaration
-        student1 = new Student();  // here 'new' dynamically allocates memory and returns a reference to it which was later stored in student1 variable.
+        // Student student1;  // declaration
+        // student1 = new Student();  // here 'new' dynamically allocates memory and returns a reference to it which was later stored in student1 variable.
 
         //  Student student1 = new Student();
         //  {---compile- --}   {---Runtime---}         
@@ -30,6 +30,13 @@ public class Basics {
 
         // Here, you can use now student1, mimicking it like as if was the object but its not the object, it is the reference variable which is pointing to the object
         // In reality, internally maybe it will be holding like some memory address of original object that is in the heap but we can't access the memory address because in java it is not allowed.(security purposes)
+
+        Student[] students = new Student[5];
+        Student kunal = new Student();
+
+        System.out.println(kunal.rno);
+        System.out.println(kunal.name);
+        System.out.println(kunal.marks);
     }
 }
 // create a class 
