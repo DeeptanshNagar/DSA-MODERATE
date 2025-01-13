@@ -1,5 +1,3 @@
-
-
 public class Basics {
     public static void main(String[] args) {
         // store 5 roll nos
@@ -32,9 +30,21 @@ public class Basics {
         // In reality, internally maybe it will be holding like some memory address of original object that is in the heap but we can't access the memory address because in java it is not allowed.(security purposes)
 
         Student[] students = new Student[5];
-        Student kunal = new Student();
+        Student kunal = new Student(15, "Kunal Kushwaha", 98.2f);
+        Student Rahul = new Student();
+        // This demonstrates that the Student() in Student kunal = new Student(); is a constructor initializing the object kunal.
+        // Constructor is a special function, that runs where you create an object and it allocates some variables.
+        // Student() ,here is the default constructor of the Student class (if no constructor is explicitly defined, Java provides a default no-argument constructor).
+        // When this line of code is executed, memory is allocated for a new Student object, and kunal refers to that object in heap from stack memory.
 
-        kunal.rno = 13;
+        // kunal.rno = 13;
+        // kunal.name = "Kunal Kushwaha";
+        // kunal.marks = 88.65f;              // making constructor instead
+
+
+        // kunal.changeName("Shoe Lover");
+        // kunal.greeting();
+
 
         System.out.println(kunal.rno);
         System.out.println(kunal.name);
@@ -58,4 +68,24 @@ class Student {
     int rno;
     String name;
     float marks;
+
+    // we need a way to add the values of the above properties object by object.
+    // we need one word to access every object.
+    // constructor inside the class body
+    Student () {
+        this.rno = 13;
+        this.name = "Kunal Kushwaha";
+        this.marks = 88.65f;
+    }
+    Student (int rno, String name, float marks) {
+        this.rno = rno;     // this.rno = roll; // this will also work.
+        this.name = name;
+        this.marks = marks;
+    }
+    void changeName(String name) {
+        this.name = name;       // name = newName;
+    }
+    void greeting() {
+        System.out.println("Hello! My name is " + this.name);
+    }
 }
