@@ -49,6 +49,9 @@ public class Basics {
         System.out.println(kunal.rno);
         System.out.println(kunal.name);
         System.out.println(kunal.marks);
+
+        Student random = new Student(kunal);
+        System.out.println(random.name);
     }
 }
 // create a class 
@@ -77,10 +80,17 @@ class Student {
         this.name = "Kunal Kushwaha";
         this.marks = 88.65f;
     }
+    // Student arpita = new Student(17, "Arpita", 89.4f);
+    // here, this will be replaced with Arpita
     Student (int rno, String name, float marks) {
         this.rno = rno;     // this.rno = roll; // this will also work.
         this.name = name;
         this.marks = marks;
+    }
+    Student (Student other) {
+        this.name = other.name;
+        this.rno = other.rno;
+        this.marks = other.marks;
     }
     void changeName(String name) {
         this.name = name;       // name = newName;
