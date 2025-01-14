@@ -30,6 +30,7 @@ public class Basics {
         // In reality, internally maybe it will be holding like some memory address of original object that is in the heap but we can't access the memory address because in java it is not allowed.(security purposes)
 
         Student[] students = new Student[5];
+        // new keyword in Java is used to create an instance of a class, also known as an object. It is used to allocate memory for an object and call the constructor of the class to initialize the object's state.
         Student kunal = new Student(15, "Kunal Kushwaha", 98.2f);
         Student Rahul = new Student();
         // This demonstrates that the Student() in Student kunal = new Student(); is a constructor initializing the object kunal.
