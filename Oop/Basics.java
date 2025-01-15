@@ -22,7 +22,7 @@ public class Basics {
         // student1 = new Student();  // here 'new' dynamically allocates memory and returns a reference to it which was later stored in student1 variable.
 
         //  Student student1 = new Student();
-        //  {---compile- --}   {---Runtime---}         
+        //  {---compile- --}   {---Runtime--}         
         // compile time = program is checking whether their are errors line by line.
         // Runtime = means when everything is finished happening, all the checks are happened, all the code has been converted, runtime as the name suggests means the program is now running or application will running that is the time when is memory will be allocated that is known as dynamic memory allocation.
 
