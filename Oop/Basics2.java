@@ -1,4 +1,4 @@
-public class Basics {
+public class Basics2 {
     public static void main(String[] args) {
         // store 5 roll nos
         int[] numbers = new int[5];
@@ -54,6 +54,9 @@ public class Basics {
 
         Student random = new Student(kunal);
         System.out.println(random.name);
+
+        Student random2 = new Student();
+        System.out.println(random2.name);
     }
 }
 // create a class 
@@ -78,9 +81,11 @@ class Student {
     // we need one word to access every object.
     // constructor inside the class body
     Student () {
-        this.rno = 13;
-        this.name = "Kunal Kushwaha";
-        this.marks = 88.65f;
+        // this is how you call a constructor from another constructor
+        this (13, "default person", 100.0f);
+        // internally its something like 
+        // new Student (13, "Arpit", 89.6f);
+        // student (13, "default person", 100.0f);
     }
     // Student arpita = new Student(17, "Arpita", 89.4f);
     // here, this will be replaced with Arpita
