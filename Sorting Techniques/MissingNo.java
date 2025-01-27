@@ -32,3 +32,4 @@ public class MissingNo {
         arr[second] = temp;
     }
 }
+
