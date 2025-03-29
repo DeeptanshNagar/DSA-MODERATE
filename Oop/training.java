@@ -1,5 +1,4 @@
 import java.util.Arrays;
-
 class Student {
     int rno;
     String name;
