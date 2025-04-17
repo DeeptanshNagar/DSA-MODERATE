@@ -35,3 +35,10 @@ public class FindAllDuplicates {
         arr[second] = temp;
     }
 }
+
+
+
+
+
+
+
