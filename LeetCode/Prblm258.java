@@ -15,4 +15,3 @@ public class Prblm258 {
         return (num % 9 == 0)?9:num % 9;
     } 
 }
-
