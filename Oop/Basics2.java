@@ -2,7 +2,6 @@ public class Basics2 {
     public static void main(String[] args) {
         // store 5 roll nos
         int[] numbers = new int[5];
-
         
         // store 5 names
         String[] names = new String[5];
