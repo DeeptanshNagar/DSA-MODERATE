@@ -31,3 +31,4 @@ public class VarArgs {
         System.out.println(Arrays.toString(v));
     }
 }
+
