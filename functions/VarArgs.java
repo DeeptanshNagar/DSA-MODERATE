@@ -21,7 +21,6 @@ public class VarArgs {
     }
 
 
-
     static void multiple(int a, int b, String ...v) {
 
     }
