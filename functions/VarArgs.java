@@ -26,6 +26,7 @@ public class VarArgs {
 
     }
 
+    
     static void fun(int ...v) {        // internally it is array of integers.
         System.out.println(Arrays.toString(v));
     }
