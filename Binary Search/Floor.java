@@ -1,12 +1,17 @@
 public class Floor {
     public static void main(String[] args) {
         int [] arr = {2, 3, 5, 9, 14, 16, 18};
-        int target = 1;
+        int target = 4;
         int ans = floor(arr, target);
-        System.out.println(arr[ans]);
+        System.out.println(ans);
     }
     // return the index of greatest number <= target.
     static int floor(int[] arr, int target) {
+
+        if (target < arr[0]) {
+            return -1;
+        }
+
         int start = 0;
         int end = arr.length-1;
 
