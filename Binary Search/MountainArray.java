@@ -3,10 +3,13 @@
 
 public class MountainArray {
     public static void main(String[] args) {
-        
+        int [] arr = {2,3,5,6,7,5,4,2,1};
+        int target = 7;
+        int ans = peakIndexInMountainArray(arr, target);
+        System.out.println(ans);
     }
 
-    public int peakIndexInMountainArray(int[] arr) {
+    public static int peakIndexInMountainArray(int[] arr, int target) {
         int start = 0;
         int end = arr.length - 1;
 
@@ -28,16 +31,5 @@ public class MountainArray {
         // hence, when they are pointing to just one element, that is the maximum one because that is what the checks say.
         // more elaboration: at every point of time for start and end, they have the best possible answer till that time.
         return start; // or return end as both are equal.
-    }
-
-    // can ignore this : just for the sake of compilation error in the main method in the class Solution in Leetcode1095.java and SearchInMountain.java .
-    public int get(int mid) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'get'");
-    }
-
-    public int length() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'length'");
     }
 }
