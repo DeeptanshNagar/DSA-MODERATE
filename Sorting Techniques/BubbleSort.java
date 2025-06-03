@@ -1,10 +1,13 @@
+
+import java.util.Arrays;
+
 // Bubble Sorting...
 
 public class BubbleSort {
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, 4, 5, 8, 6};
         bubble(arr);
-        System.out.println(Arrays.toString(ans));
+        System.out.println(Arrays.toString(arr));
     }
 
     static void bubble(int[] arr) {
