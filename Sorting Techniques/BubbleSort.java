@@ -3,8 +3,8 @@
 public class BubbleSort {
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, 4, 5, 8, 6};
-        // int ans = bubble(arr);
-        // System.out.println(Arrays.toString(ans));
+        bubble(arr);
+        System.out.println(Arrays.toString(ans));
     }
 
     static void bubble(int[] arr) {
