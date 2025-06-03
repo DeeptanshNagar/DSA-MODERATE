@@ -84,4 +84,5 @@ public class SortedMatrix {
             return binarySearch(matrix, rStart + 1, cMid + 1, cols - 1, target);
         }
     }
+    
 }
