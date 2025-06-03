@@ -8,11 +8,11 @@ public class RowColMatrix {
                 {28, 29, 37, 49},
                 {33, 34, 38, 50}
         };
-        System.out.println(Arrays.toString(search(arr, 7)));
+        System.out.println(Arrays.toString(search(arr, 37)));
     }
     static int[] search(int[][] matrix, int target) {
         int row = 0;
-        int col = matrix.length - 1;
+        int col = matrix[0].length - 1;
         
         while (row < matrix.length && col >= 0) {
             if (matrix[row][col] == target) {
@@ -28,4 +28,3 @@ public class RowColMatrix {
         return new int[]{-1, -1};
     }
 }
-
