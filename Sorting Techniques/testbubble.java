@@ -17,8 +17,8 @@ public class testbubble {
                 }
             }
         }
-        if(!boolean) {
-            
+        if(!swapped) {
+            break;
         }
     }
 }
