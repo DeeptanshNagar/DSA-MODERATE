@@ -4,7 +4,7 @@ public class testbubble {
         bubble(arr);
         System.out.println(arr);
     }
-    static int bubble(int[] arr) {
+    static void bubble(int[] arr) {
         boolean swapped;
         for (int i = 0; i < arr.length; i++) {
             swapped = false;
@@ -16,9 +16,9 @@ public class testbubble {
                     swapped = true;
                 }
             }
-        }
-        if(!swapped) {
+            if(!swapped) {
             break;
+            }
         }
     }
 }
