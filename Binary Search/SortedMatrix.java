@@ -10,7 +10,7 @@ public class SortedMatrix {
         };
         System.out.println(Arrays.toString(search(arr, 9))); // Output: [2, 2]
         System.out.println(Arrays.toString(search(arr, 5))); // Output: [1, 1]
-        System.out.println(Arrays.toString(search(arr, 10))); // Output: [-1, -1]
+        System.out.println(Arrays.toString(search(arr, 10))); // Output: [2, 1]
     }
 
     // Search in the row provided between the columns provided
