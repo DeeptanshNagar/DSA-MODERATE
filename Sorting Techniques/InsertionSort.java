@@ -1,3 +1,11 @@
+// Insertion Sort..
+// Time complexity - Best Case -> O(n) ////// Worst Case -> O(n*n)
+// Why it is used ? 
+// Because - 1). Adaptive - steps get reduced if array is sorted. (No of swaps are reduced as compared to bubble sort)
+// 2). stable sorting algorithm.
+// 3). used for smaller values of N => works good when array is partially sorted.
+// 4). That is why it takes part in hybrid sorting algorithms.
+
 import java.util.Arrays;
 
 public class InsertionSort {
