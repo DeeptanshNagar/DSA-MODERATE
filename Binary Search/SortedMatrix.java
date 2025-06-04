@@ -5,7 +5,7 @@ public class SortedMatrix {
         int[][] arr = {
                 {1, 2, 3, 4},  //rstart
                 {5, 6, 7 ,8},
-                {9, 10},
+                {9, 10, 11, 12},
                 {13, 14, 15, 16} // rEnd
         };
         System.out.println(Arrays.toString(search(arr, 4))); // Output: [0, 3]
@@ -46,7 +46,7 @@ public class SortedMatrix {
 
         int rStart = 0;
         int rEnd = rows - 1; // 3
-        int cMid = cols / 2;   
+        int cMid = (cols-1) / 2;   
 
         // Run the loop till 2 rows are remaining
         while (rStart < (rEnd - 1)) { // while this is true it will have more than 2 rows
