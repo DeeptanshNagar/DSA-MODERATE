@@ -1,10 +1,13 @@
+
+import java.util.Arrays;
+
 // https://leetcode.com/problems/set-mismatch
 
 public class SetMismatch {
     public static void main(String[] args) {
         int[] nums = {1, 2, 2, 4};
         int[] result = findErrorNums(nums);
-        System.out.println("Duplicate: " + result[0] + ", Missing: " + result[1]);
+        System.out.println(Arrays.toString(result));
     }
 
     public static int[] findErrorNums(int[] arr) {
