@@ -7,12 +7,11 @@ import java.util.List;
 public class FindAllMissing {
     public static void main(String[] args) {
         int[] nums = {4, 3, 2, 7, 8, 2, 3, 1}; 
-        FindAllMissing finder = new FindAllMissing();
-        List<Integer> result = finder.findDisappearedNumbers(nums);
+        List<Integer> result = findDisappearedNumbers(nums);
         System.out.println("Missing numbers: " + result);
     }
 
-    public List<Integer> findDisappearedNumbers(int[] nums) {
+    public static List<Integer> findDisappearedNumbers(int[] nums) {
         int i = 0;
         while (i < nums.length) {
             int correct = nums[i] - 1;
@@ -23,7 +22,6 @@ public class FindAllMissing {
             }
         }
 
-        // Just find the missing numbers
         List<Integer> ans = new ArrayList<>();
         for (int index = 0; index < nums.length; index++) {
             if (nums[index] != index + 1) {
@@ -33,7 +31,7 @@ public class FindAllMissing {
         return ans;
     }
 
-    private void swap(int[] arr, int first, int second) {
+    private static void swap(int[] arr, int first, int second) {
         int temp = arr[first];
         arr[first] = arr[second];
         arr[second] = temp;
