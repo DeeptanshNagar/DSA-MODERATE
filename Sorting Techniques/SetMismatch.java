@@ -2,13 +2,12 @@
 
 public class SetMismatch {
     public static void main(String[] args) {
-        SetMismatch solution = new SetMismatch();
         int[] nums = {1, 2, 2, 4};
-        int[] result = solution.findErrorNums(nums);
+        int[] result = findErrorNums(nums);
         System.out.println("Duplicate: " + result[0] + ", Missing: " + result[1]);
     }
 
-    public int[] findErrorNums(int[] arr) {
+    public static int[] findErrorNums(int[] arr) {
         int i = 0;
 
         // Step 1: Cyclic sort to place elements at their correct positions
