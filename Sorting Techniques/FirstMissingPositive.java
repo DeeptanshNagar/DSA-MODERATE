@@ -1,5 +1,4 @@
-// https://leetcode.com/problems/missing-number/description/
-
+// https://leetcode.com/problems/first-missing-positive/
 
 public class FirstMissingPositive {
     public static int firstMissingPositive(int[] arr) {
