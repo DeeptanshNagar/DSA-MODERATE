@@ -4,12 +4,11 @@
 public class MountainArray {
     public static void main(String[] args) {
         int [] arr = {2,3,5,6,7,5,4,2,1};
-        int target = 7;
-        int ans = peakIndexInMountainArray(arr, target);
+        int ans = peakIndexInMountainArray(arr);
         System.out.println(ans);
     }
 
-    public static int peakIndexInMountainArray(int[] arr, int target) {
+    public static int peakIndexInMountainArray(int[] arr) {
         int start = 0;
         int end = arr.length - 1;
 

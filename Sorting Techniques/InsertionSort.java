@@ -10,8 +10,8 @@ import java.util.Arrays;
 
 public class InsertionSort {
     public static void main(String[] args) {
-        int[] arr = {5, 3, 4, 1, 2};
-        insertion(arr); 
+        int[] arr = {3,2,1,5,6,4};
+        insertion(arr);
         System.out.println(Arrays.toString(arr)); // Print the sorted array
     }
 

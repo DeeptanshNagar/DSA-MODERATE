@@ -7,6 +7,7 @@ public class StrBuilder {
             char ch = (char)('a' + i);
             builder.append(ch);     // mutable
         }
+        System.out.println(builder);
         System.out.println(builder.toString());
 
         builder.deleteCharAt(0);

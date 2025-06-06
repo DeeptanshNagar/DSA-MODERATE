@@ -1,11 +1,13 @@
 public class Palindrome {
     public static void main(String[] args) {
-        String str = "abcdcba";
+        String str = "null";
         System.out.println(isPalindrome(str));
     }
     static boolean isPalindrome(String str) {
-        if (str == null || str.length() == 0) {
+        if (str.length() == 0){
             return true;
+        } else if(str == null) {
+            return true;             // false.
         }
         str = str.toLowerCase();
         for (int i = 0; i < str.length()/2; i++) {

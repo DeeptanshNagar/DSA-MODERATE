@@ -2,6 +2,7 @@ public class Output {
     public static void main(String[] args) {
         // System.out.println(56);
         Integer num = new Integer(56); // wrapper class // treating integer as an object provides various methods which we can perform on variable num
+        num.
         System.out.println(num.toString());
         System.out.println(num); // .toString is not neccessary to mention as it (num) will be by default refering to .valueOf and .valueOf is refering to .toString
         // System.out.println("Kunal");
