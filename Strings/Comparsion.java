@@ -2,6 +2,7 @@ public class Comparsion {
     public static void main(String[] args) {
         String a = "Kunal";
         String b = "Kunal";
+        System.out.println(a==b); // True
         // in above method we use string pool which is more effective method and makes our program more optimized.
         String c = a;
         System.out.println(c == b); // True
