@@ -7,7 +7,7 @@ public class patterns {
         // pattern3();
         // pattern4(5);
         // pattern5(5);
-        pattern28(5);
+        pattern28(4);
     }
     // static void pattern1(int n) {
     //     for (int rows = 1; rows <= n; rows++) {
@@ -45,15 +45,15 @@ public class patterns {
     //     }
     // }
 
-    // static void pattern5(int n) {
-    //     for (int row = 1; row < 2*n; row++) {
-    //         int totalColsInRow = row > n? 2*n-row:row; // n - (row-n)
-    //         for (int col = 1; col <= totalColsInRow; col++) {
-    //             System.out.print("* ");
-    //         }
-    //         System.out.println();
-    //     }
-    // }
+    static void pattern5(int n) {
+        for (int row = 1; row < 2*n; row++) {
+            int totalColsInRow = row > n? 2*n-row:row; // n - (row-n)
+            for (int col = 1; col <= totalColsInRow; col++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
 
     static void pattern28(int n) {
         for (int row = 0; row < 2*n; row++) {
