@@ -7,7 +7,7 @@ public class patterns {
         // pattern3();
         // pattern4(5);
         // pattern5(5);
-        pattern28(4);
+        // pattern28(4);
     }
     // static void pattern1(int n) {
     //     for (int rows = 1; rows <= n; rows++) {
