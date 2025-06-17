@@ -1,27 +1,26 @@
 // Kunal Kushwaha Method - (Method 3)
-// public class UniqueElement {
-//     public static void main(String[] args) {
-//         int[] arr = {2, 2, 3, 3, 3, 9, 2, 7, 7, 8, 7, 8, 8};
-//         int result = 0;
+public class UniqueElement {
+    public static void main(String[] args) {
+        int[] arr = {2, 2, 3, 3, 3, 9, 2, 7, 7, 8, 7, 8, 8};
+        int result = 0;
 
-//         for (int i = 0; i < 32; i++) {
-//             int sum = 0;
-//             for (int j = 0; j < arr.length; j++) {
-//                 if ((arr[j] & (1 << i)) != 0) {
-//                     sum++;
-//                 }
-//             }
+        for (int i = 0; i < 32; i++) {
+            int sum = 0;
+            for (int j = 0; j < arr.length; j++) {
+                if ((arr[j] & (1 << i)) != 0) {
+                    sum++;
+                }
+            }
 
-//             // If count of set bits is not a multiple of 3,
-//             // it means the unique number has that bit set.
-//             if (sum % 3 != 0) {
-//                 result |= (1 << i);
-//             }
-//         }
-
-//         System.out.println("The number that appears only once is: " + result);
-//     }
-// }
+            // If count of set bits is not a multiple of 3,
+            // it means the unique number has that bit set.
+            if (sum % 3 != 0) {
+                result |= (1 << i);
+            }
+        }
+        System.out.println("The number that appears only once is: " + result);
+    }
+}
 
 // Time Comp. - O(n * 32);
 // Space Comp. - O(1)
@@ -30,24 +29,24 @@
 
 
 
-public class UniqueElement{
-    public static void main(String[] args) {
-        int[] arr = {4, 4, 4, 6, 5, 5, 5};
-        // int[] arr = {4, 4, 4, 5, 5, 5, 6};
-        // int[] arr = {6, 4, 4, 4, 5, 5, 5};
-        int ans = findUnique(arr);
-        System.out.println(ans);
-    }
+// public class UniqueElement{
+//     public static void main(String[] args) {
+//         int[] arr = {4, 4, 4, 6, 5, 5, 5};
+//         // int[] arr = {4, 4, 4, 5, 5, 5, 6};
+//         // int[] arr = {6, 4, 4, 4, 5, 5, 5};
+//         int ans = findUnique(arr);
+//         System.out.println(ans);
+//     }
 
-    static int findUnique(int[] arr) {
-        for (int i = 1; i < arr.length; i = i+3) {
-            if(arr[i] != arr[i-1]) {
-                return arr[i-1];
-            }
-        }
-        return arr[arr.length-1];
-    }
-}
+//     static int findUnique(int[] arr) {
+//         for (int i = 1; i < arr.length; i = i+3) {
+//             if(arr[i] != arr[i-1]) {
+//                 return arr[i-1];
+//             }
+//         }
+//         return arr[arr.length-1];
+//     }
+// }
 
 
 
