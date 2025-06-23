@@ -1,3 +1,4 @@
+package Easy;
 public class OnetoN {
     public static void main(String[] args) {
         func(1);

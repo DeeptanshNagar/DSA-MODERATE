@@ -1,3 +1,4 @@
+package Easy;
 public class Factorial {
     public static void main(String[] args) {
         int ans = Factorial(10);

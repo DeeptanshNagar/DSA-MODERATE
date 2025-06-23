@@ -1,3 +1,4 @@
+package Easy;
 public class digitSum {
     public static void main(String[] args) {
         int ans = digitSum1(1342);
