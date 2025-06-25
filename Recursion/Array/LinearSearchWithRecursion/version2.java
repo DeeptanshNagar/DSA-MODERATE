@@ -12,5 +12,5 @@ public class version2 {
             return index;
         }
         return findIndex(arr, target, index+1);
-    } 
+    }
 }
