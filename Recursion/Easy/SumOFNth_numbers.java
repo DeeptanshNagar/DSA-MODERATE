@@ -1,3 +1,4 @@
+package Easy;
 public class SumOFNth_numbers {
     public static void main(String[] args) {
         int ans = sum(10);

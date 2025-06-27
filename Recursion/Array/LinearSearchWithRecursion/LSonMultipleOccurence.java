@@ -8,6 +8,7 @@ public class LSonMultipleOccurence {
 
         // 2nd way -
         System.out.println(findIndex2(arr, 8, 0, new ArrayList<>()));
+        // System.out.println(findAllIndex(arr, 8, 0));
 
     }
 
@@ -33,4 +34,20 @@ public class LSonMultipleOccurence {
         }
         return findIndex2(arr, target, index + 1, list);
     }
+
+    // 3rd way - Not a good approach as it creates new arraylist multiple times with multiple recursion calls.
+    // static ArrayList<Integer> findAllIndex(int[] arr, int target, int index) {
+    //     ArrayList<Integer> list = new ArrayList<>();
+    //     if(index == arr.length) {
+    //         return list;
+    //     }
+
+    //     // this will contain answer for that function call only.
+    //     if(arr[index] == target) {
+    //         list.add(index);
+    //     }
+    //     ArrayList<Integer> ansFromBelowCalls = findAllIndex(arr, target, index+1);
+    //     list.addAll(ansFromBelowCalls);
+    //     return list;
+    // }
 }
