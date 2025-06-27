@@ -1,11 +1,19 @@
+
+import java.util.Arrays;
+
 // https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/description/
 
 public class FirstAndLastPosition {
     public static void main(String[] args) {
+        int[] nums = {1, 2, 3, 3, 3, 3, 4, 5, 6};
+        int target = 3;
+
+        int[] ans = searchRange(nums, target);
+        System.out.println(Arrays.toString(ans));
 
     }
 
-    public int[] searchRange(int[] nums, int target) {
+    public static int[] searchRange(int[] nums, int target) {
 
         int[] ans = {-1, -1};
 
@@ -26,13 +34,11 @@ public class FirstAndLastPosition {
     }
 
     // this function just returns the index value of the target element
-    int search(int[] nums, int target, boolean findStartIndex) {
+    static int search(int[] nums, int target, boolean findStartIndex) {
         int ans = -1;
         int start = 0;
         int end = nums.length-1;
         while(start <= end) {
-            // find the middle element 
-            // int mid = (start + end) / 2;  // might be possible that start + end exceeds the range of int in java
             int mid = start + (end - start) / 2;
 
             if(target < nums[mid]) {
