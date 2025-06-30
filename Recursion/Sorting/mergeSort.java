@@ -3,8 +3,8 @@ import java.util.Arrays;
 public class mergeSort {
     public static void main(String[] args) {
         int[] arr = {5,4,3,2,1};
-        arr = mergeSort(arr); // changing the original array
-        int[] ans = mergeSort(arr);  // creating a new ans array and storing the answer. Hence, its not changing the original array.
+        arr = mergeSort(arr); // updating the original array
+        int[] ans = mergeSort(arr);  // creating a new ans array and storing the answer. Hence, its not updating the original array.
         System.out.println(Arrays.toString(arr));
     }
     static int[] mergeSort(int[] arr) {
