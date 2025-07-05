@@ -1,7 +1,9 @@
 public class m2{
     public static void main(String[] args) {
-        skip("", "bacccadah");
+        System.out.println(skipAppNotApple("bacappccadah"));
+        System.out.println(skipAppNotApple("bacappleccadah"));
     }
+    
     static void skip(String ans, String s) {
         if(s.isEmpty()) {
             System.out.println(ans);
@@ -23,6 +25,43 @@ public class m2{
             // bcccd + h = bcccdh, ""
             // now string is empty so it will simply print(sout) ans.
             // output --> bcccdh
+        }
+    }
+    
+
+    
+    static String skip(String str) {
+        if(str.isEmpty()) {
+            return "";
+        }
+        char ch = str.charAt(0);
+        if(ch == 'a') {
+            return skip(str.substring(1));
+        } else {
+            return ch + skip(str.substring(1));
+        }
+    }
+    
+
+    static String skipApple(String str) {
+        if(str.isEmpty()){
+            return "";
+        }
+        if(str.startsWith("apple")){
+            return skipApple(str.substring(5));
+        } else {
+            return str.charAt(0) + skipApple(str.substring(1));
+        }
+    }
+
+    static String skipAppNotApple(String str) {
+        if(str.isEmpty()) {
+            return "";
+        }
+        if(str.startsWith("app") && !str.startsWith("apple")) {
+            return skipAppNotApple(str.substring(3));
+        } else {
+            return str.charAt(0) + skipAppNotApple(str.substring(1));
         }
     }
 }
