@@ -34,7 +34,7 @@ public class main {
     }
 
     static List<List<Integer>> subsetDuplicates(int[] arr) {
-        Arrays.sort(arr);
+        Arrays.sort(arr); // [1,2,2]
         List<List<Integer>> outer = new ArrayList<>();
         outer.add(new ArrayList<>());
         int start = 0;
@@ -49,7 +49,9 @@ public class main {
                 List<Integer> internal = new ArrayList<>(outer.get(j));
                 internal.add(arr[i]);
                 outer.add(internal);
-                // 1st iteration = [[], [1]]
+                // i = 0 : 1st iteration = [[], [1]]
+                // i = 1 : 2nd iteration = [[], [1], [2], [1,2]]
+
             }
         }
         return outer;
