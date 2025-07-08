@@ -39,6 +39,7 @@ public class main {
         outer.add(new ArrayList<>());
         int start = 0;
         int end = 0;
+        
         for(int i = 0; i < arr.length; i++) { 
             start = 0;
             if(i > 0 && arr[i] == arr[i-1]){
@@ -51,6 +52,7 @@ public class main {
                 outer.add(internal);
                 // i = 0 : 1st iteration = [[], [1]]
                 // i = 1 : 2nd iteration = [[], [1], [2], [1,2]]
+                // i = 2 : 3rd iteration = [[], [1], [2], [1,2]]
 
             }
         }
