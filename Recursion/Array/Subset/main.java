@@ -49,6 +49,7 @@ public class main {
                 List<Integer> internal = new ArrayList<>(outer.get(j));
                 internal.add(arr[i]);
                 outer.add(internal);
+                // 1st iteration = [[], [1]]
             }
         }
         return outer;
