@@ -55,5 +55,6 @@ public class permutations {
             count = count + permutationCounts(f + ch + s, up.substring(1));
         }
         return count;
-    }
+    } // tc = o(n!)
+      // sc = o(n)
 }
