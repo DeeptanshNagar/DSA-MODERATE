@@ -41,8 +41,6 @@ public class maze {
 
 
 
-
-
     // static void mazeSteps(String p, int row, int col) {
     //     if(row == 1 && col == 1) {
     //         System.out.println(p);
@@ -58,23 +56,22 @@ public class maze {
 
 
     static ArrayList<String> mazeSteps(String p, int row, int col) {
-    if (row == 1 && col == 1) {
-        ArrayList<String> list = new ArrayList<>();
-        list.add(p);
-        return list;
+        if (row == 1 && col == 1) {
+            ArrayList<String> list = new ArrayList<>();
+            list.add(p);
+            return list;
+        }
+
+        ArrayList<String> ans = new ArrayList<>();
+
+        if (row > 1) {
+            ans.addAll(mazeSteps(p + "D", row - 1, col));
+        }
+
+        if (col > 1) {
+            ans.addAll(mazeSteps(p + "R", row, col - 1));
+        }
+
+        return ans;
     }
-
-    ArrayList<String> ans = new ArrayList<>();
-
-    if (row > 1) {
-        ans.addAll(mazeSteps(p + "D", row - 1, col));
-    }
-
-    if (col > 1) {
-        ans.addAll(mazeSteps(p + "R", row, col - 1));
-    }
-
-    return ans;
-}
-
 }
