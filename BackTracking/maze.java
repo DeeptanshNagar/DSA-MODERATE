@@ -1,6 +1,18 @@
+
+import java.util.ArrayList;
+
 public class maze {
     public static void main(String[] args) {
-        System.out.println(maze(3,3));
+        // Counting no. of possible ways :-
+        // System.out.println(maze(3,3));
+
+        // Printing all possible ways :-
+        // mazeSteps("", 3, 3);
+
+        // same but with help of ArrayList :-
+        ArrayList<String> answer = mazeSteps("", 3, 3);
+        System.out.println(answer);
+
     }
     static int maze(int row, int col) {
         if(row == 1 || col == 1) {
@@ -26,5 +38,43 @@ public class maze {
 //     → returns 3
 
 // Final answer: 3 + 3 = 6
+
+
+
+
+
+    // static void mazeSteps(String p, int row, int col) {
+    //     if(row == 1 && col == 1) {
+    //         System.out.println(p);
+    //         return;
+    //     }
+    //     if(row > 1) {
+    //         mazeSteps(p + "D", row-1, col);
+    //     }
+    //     if(col > 1) {
+    //         mazeSteps(p + "R", row, col-1);
+    //     }
+    // }
+
+
+    static ArrayList<String> mazeSteps(String p, int row, int col) {
+    if (row == 1 && col == 1) {
+        ArrayList<String> list = new ArrayList<>();
+        list.add(p);
+        return list;
+    }
+
+    ArrayList<String> ans = new ArrayList<>();
+
+    if (row > 1) {
+        ans.addAll(mazeSteps(p + "D", row - 1, col));
+    }
+
+    if (col > 1) {
+        ans.addAll(mazeSteps(p + "R", row, col - 1));
+    }
+
+    return ans;
+}
 
 }
