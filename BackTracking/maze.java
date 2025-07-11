@@ -10,9 +10,20 @@ public class maze {
         // mazeSteps("", 3, 3);
 
         // same but with help of ArrayList :-
-        ArrayList<String> answer = mazeSteps("", 3, 3);
-        System.out.println(answer);
+        // ArrayList<String> answer = mazeSteps("", 3, 3);
+        // System.out.println(answer);
 
+        // Making it more interesting by moving diagonally :- 
+        // ArrayList<String> answer = mazeStepsDiagonally("", 3, 3); 
+        // System.out.println(answer);
+
+        // Suppose a obstacle river is at index [2,2] and now we are starting from [0,0] index and we have to reach [3,3] index
+        boolean[][] maze = {
+            {true, true, true},
+            {true, false, true},
+            {true, true, true}
+        };
+        mazeStepsRiver("", maze, 0, 0);
     }
     static int maze(int row, int col) {
         if(row == 1 || col == 1) {
@@ -71,7 +82,45 @@ public class maze {
         if (col > 1) {
             ans.addAll(mazeSteps(p + "R", row, col - 1));
         }
-
         return ans;
     }
+
+    static ArrayList<String> mazeStepsDiagonally(String p, int row, int col) {
+        if (row == 1 && col == 1) {
+            ArrayList<String> list = new ArrayList<>();
+            list.add(p);
+            return list;
+        }
+
+        ArrayList<String> ans = new ArrayList<>();
+        if (row > 1 && col > 1) {
+            ans.addAll(mazeStepsDiagonally(p + "D", row - 1, col - 1));
+        }
+
+        if (row > 1) {
+            ans.addAll(mazeStepsDiagonally(p + "V", row - 1, col));
+        }
+ 
+        if (col > 1) {
+            ans.addAll(mazeStepsDiagonally(p + "H", row, col - 1));
+        }
+        return ans;
+    }
+
+    static void mazeStepsRiver(String p, boolean[][] maze, int row, int col) {
+        if(row == maze.length - 1 && col == maze[0].length - 1) {
+            System.out.println(p);
+            return;
+        }
+        if(!maze[row][col]) {
+            return;
+        }
+        if(row < maze.length - 1) {
+            mazeStepsRiver(p + "D", maze, row+1, col);
+        }
+        if(col < maze[0].length - 1) {
+            mazeStepsRiver(p + "R", maze, row, col+1);
+        }
+    }
+       
 }
