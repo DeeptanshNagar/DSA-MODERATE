@@ -1,9 +1,9 @@
-public class apLL {
+public class LL {
     Node head;
     Node tail;
     private int size;
 
-    apLL(){
+    LL(){
         this.size = 0;
     }
 
@@ -97,7 +97,7 @@ public class apLL {
     }
 
     public static void main(String[] args) {
-        apLL list = new apLL();
+        LL list = new LL();
         System.out.println("Inserting from start");
         list.addFirst("1");
         list.printList();
@@ -140,7 +140,7 @@ public class apLL {
 
 
 
-// public class apLL {
+// public class LL {
 
 //     Node head;
 //     Node tail;
@@ -191,7 +191,7 @@ public class apLL {
 //             System.out.println("NULL");
 //         }
 //     public static void main(String[] args) {
-//         apLL list = new apLL();
+//         LL list = new LL();
 //         list.firstPos("A");
 //         list.firstPos("B");
 //         list.lastPos("C");
