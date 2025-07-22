@@ -53,14 +53,73 @@ public class apLL {
         System.out.println("NULL");
     }
 
+    // delete first position
+    public void deleteFirst() {
+        if(head == null) {
+            System.out.println("List is empty");
+            return;
+        }
+
+        head = head.next;
+        // Node first = head;
+        // head = first.next;
+    }
+
+    // delete last position
+    public void deleteLast() {
+        if(head == null) {
+            System.out.println("List is empty");
+            return;
+        }
+
+        if(head.next == null) {
+            head = null;
+            return;
+        }
+        
+        Node secondLast = head;
+        Node lastNode = head.next;
+        while(lastNode.next != null) {
+            lastNode = lastNode.next;
+            secondLast = secondLast.next;
+        }
+        secondLast.next = null;
+    }
+
     public static void main(String[] args) {
         apLL list = new apLL();
-        list.addFirst("boy");
-        list.addFirst("super");
-        list.addFirst("am");
-        list.addFirst("i");
-        list.addLast(".");
+        System.out.println("Inserting from start");
+        list.addFirst("1");
+        list.printList();
+        list.addFirst("2");
+        list.printList();
+        list.addFirst("3");
+        list.printList();
 
+        System.out.println();
+
+        System.out.println("Inserting from end");
+        list.addLast("4");
+        list.printList();
+        list.addLast("5");
+        list.printList();
+
+        System.out.println();
+
+        // for sake of understanding
+        System.out.println("Original list");
+        list.printList();
+
+        System.out.println();
+
+        System.out.println("Deleting from start");
+        list.deleteFirst();
+        list.printList();
+
+        System.out.println();
+
+        System.out.println("Deleting from end");
+        list.deleteLast();
         list.printList();
     }
 }
