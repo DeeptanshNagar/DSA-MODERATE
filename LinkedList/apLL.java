@@ -68,8 +68,6 @@ public class apLL {
         }
         size--;
         head = head.next;
-        // Node first = head;
-        // head = first.next;
     }
 
     // delete last position
@@ -78,6 +76,8 @@ public class apLL {
             System.out.println("List is empty");
             return;
         }
+
+        size--;
 
         if(head.next == null) {
             head = null;
@@ -91,6 +91,9 @@ public class apLL {
             secondLast = secondLast.next;
         }
         secondLast.next = null;
+    }
+    public int getSize() {
+        return size;
     }
 
     public static void main(String[] args) {
@@ -128,6 +131,10 @@ public class apLL {
         System.out.println("Deleting from end");
         list.deleteLast();
         list.printList();
+
+        System.out.println();
+        System.out.println("Size of Remaining List");
+        System.out.println(list.getSize());
     }
 }
 
