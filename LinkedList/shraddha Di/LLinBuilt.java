@@ -32,5 +32,9 @@ public class LLinBuilt {
             System.out.print(list.get(i) + " -> ");
         }
         System.out.println("NULL");
+
+        // we can remove using index also
+        list.remove(0);
+        System.out.println(list);
     }
 }
