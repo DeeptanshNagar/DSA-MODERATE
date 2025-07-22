@@ -1,6 +1,12 @@
 public class apLL {
     Node head;
     Node tail;
+    private int size;
+
+    apLL(){
+        this.size = 0;
+    }
+
     class Node{
         String data;
         Node next;
@@ -8,6 +14,7 @@ public class apLL {
         Node(String data) {
             this.data = data;
             this.next = null;
+            size++;
         }
     }
 
@@ -59,7 +66,7 @@ public class apLL {
             System.out.println("List is empty");
             return;
         }
-
+        size--;
         head = head.next;
         // Node first = head;
         // head = first.next;
