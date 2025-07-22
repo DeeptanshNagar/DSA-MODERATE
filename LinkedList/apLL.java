@@ -28,7 +28,7 @@ public class apLL {
     public void addLast(String data) {
         Node newNode = new Node(data);
         if(head == null) {
-            head = newNode;
+            head = tail = newNode;
             return;
         }
 
@@ -46,7 +46,7 @@ public class apLL {
             return;
         }
         Node currNode = head;
-        while(currNode != null) {
+        while(currNode != null) { // kyuki end wala element bi print karna hai
             System.out.print(currNode.data + " -> ");
             currNode = currNode.next;
         }
@@ -55,11 +55,74 @@ public class apLL {
 
     public static void main(String[] args) {
         apLL list = new apLL();
-        list.addFirst("tiger");
-        list.addFirst("a");
-        list.addFirst("is");
-        list.addFirst("the");
+        list.addFirst("boy");
+        list.addFirst("super");
+        list.addFirst("am");
+        list.addFirst("i");
+        list.addLast(".");
 
         list.printList();
     }
 }
+
+
+
+// public class apLL {
+
+//     Node head;
+//     Node tail;
+
+//     class Node{
+//         String data;
+//         Node next;
+
+//         Node(String data) {
+//             this.data = data;
+//             this.next = null;
+//         }
+//     }
+//     // inserting at first posi
+//         public void firstPos(String data) {
+//             Node newNode = new Node(data);
+//             if(head == null) {
+//                 head = newNode;
+//                 return;
+//             }
+
+//             newNode.next = head;
+//             head = newNode;
+//         }
+
+//         // inserting at last posi
+//         public void lastPos(String data) {
+//             Node newNode = new Node(data);
+//             if(head == null) {
+//                 head = tail = newNode;
+//                 return;
+//             }
+
+//             Node currNode = head;
+//             while(currNode.next != null) {
+//                 currNode = currNode.next;
+//             }
+//             currNode.next = newNode;
+//         }
+
+//         // print
+//         public void print() {
+//             Node currNode = head;
+//             while(currNode != null) {
+//                 System.out.print(currNode.data + " -> ");
+//                 currNode = currNode.next;
+//             }
+//             System.out.println("NULL");
+//         }
+//     public static void main(String[] args) {
+//         apLL list = new apLL();
+//         list.firstPos("A");
+//         list.firstPos("B");
+//         list.lastPos("C");
+//         list.print();
+//     }
+// }
+
