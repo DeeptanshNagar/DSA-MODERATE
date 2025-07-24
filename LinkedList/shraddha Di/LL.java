@@ -29,6 +29,8 @@ public class LL {
         }
         newNode.next = head;
         head = newNode;
+
+        // size += 1;
     }
 
     // add on last position
@@ -135,6 +137,16 @@ public class LL {
         System.out.println();
         System.out.println("Size of Remaining List");
         System.out.println(list.getSize());
+    }
+
+    public void insertFirst(int i) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'insertFirst'");
+    }
+
+    public void display() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'display'");
     }
 }
 
