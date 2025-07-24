@@ -87,7 +87,8 @@ public class LL {
         list.insertFirst(5);
         list.insertFirst(3);
         list.insertLast(18);
-        list.display();  // Output: 3 -> 5 -> 9 -> 8 -> 12 -> 18 -> NULL
-        System.out.println("Size: " + list.getSize()); // Output: Size: 6
+        list.insertAtIndex(7, 3);
+        list.display();  // Output: 3 -> 5 -> 9 -> 7 -> 8 -> 12 -> 18 -> NULL
+        System.out.println("Size: " + list.getSize()); // Output: Size: 7
     }
 }
