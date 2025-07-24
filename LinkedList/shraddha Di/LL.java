@@ -144,9 +144,16 @@ public class LL {
         throw new UnsupportedOperationException("Unimplemented method 'insertFirst'");
     }
 
+    // KK ka jamela he ye 2
+
     public void display() {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'display'");
+    }
+
+    public void insertLast(int i) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'insertLast'");
     }
 }
 
