@@ -66,6 +66,16 @@ public class LL {
         size++;
     }
 
+    public int deleteFirst() {
+        int val = head.value;
+        head = head.next;
+        if (head == null) {
+            tail = null;
+        }
+        size--;
+        return val;
+    }
+
     public void display() {
         Node temp = head;
         while (temp != null) {
@@ -89,6 +99,11 @@ public class LL {
         list.insertLast(18);
         list.insertAtIndex(7, 3);
         list.display();  // Output: 3 -> 5 -> 9 -> 7 -> 8 -> 12 -> 18 -> NULL
-        System.out.println("Size: " + list.getSize()); // Output: Size: 7
+        // System.out.println("Size: " + list.getSize()); // Output: Size: 7
+
+
+        list.deleteFirst();
+        // System.out.println(list.deleteFirst());
+        list.display();  // 5 -> 9 -> 7 -> 8 -> 12 -> 18 -> NULL
     }
 }
