@@ -125,8 +125,13 @@ public class LLrev {
         return temp;
     }
 
+    public int getSize() {
+        return size;
+    }
+
     public void print() {
         Node temp = head;
+        System.out.print("HEAD -> ");
         while(temp != null) {
             System.out.print(temp.value + " -> ");
             temp = temp.next;
@@ -150,5 +155,6 @@ public class LLrev {
         list.deleteAtIndex(4);
         list.print();
 
+        System.out.println(list.getSize());
     }
 }
