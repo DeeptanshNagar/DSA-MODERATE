@@ -1,3 +1,4 @@
+package Single;
 public class LL {
     // pointers
     private Node head;
