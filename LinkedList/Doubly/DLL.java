@@ -1,7 +1,11 @@
 public class DLL {
 
     private Node head;
-    // tail kyu ni lia 
+    // Why should you keep a tail?
+    // If you keep a tail pointer:
+    // You don’t have to traverse the list every time to find the last node.
+    // Reverse traversal becomes O(n) → start directly from tail.
+    // Adding elements at the end becomes very efficient (O(1) instead of O(n)).
 
     private class Node {
         int val;
