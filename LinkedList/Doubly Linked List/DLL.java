@@ -82,7 +82,9 @@ public class DLL {
 
         Node temp = get(index -1);
         Node newNode = new Node(val, temp.next, temp);
-        temp.next.prev = newNode;
+        if (temp.next != null) {
+            temp.next.prev = newNode;
+        }
         temp.next = newNode;
 
         size++;
