@@ -25,6 +25,7 @@ public class DLL {
         }
     }
 
+    // insert at first
     public void insertFirst(int val) {
         Node newNode = new Node(val);
         newNode.next = head;
@@ -35,6 +36,48 @@ public class DLL {
         head = newNode;
     }
     
+    // insert at last
+    public void insertLast(int val) {
+        Node newNode = new Node(val);
+        Node last = head;
+
+        newNode.next = null; // specification
+
+        if (head == null) { // empty list case
+            head = newNode;
+            return;
+        }
+
+        while(last.next != null) {
+            last = last.next;
+        }
+
+        last.next = newNode;
+        newNode.prev = last;
+
+    }
+
+    public void insertLast(int val) {
+        Node newNode = new Node(val);
+        Node last = head;
+
+        newNode.next = null; // specification
+
+        if (head == null) { // empty list case
+            head = newNode;
+            return;
+        }
+        
+        while(last.next != null) {
+            last = last.next;
+        }
+
+        last.next = newNode;
+        newNode.prev = last;
+
+    }
+
+
     public void displayReverse() {
         Node temp = head;
         Node last = null;
@@ -59,6 +102,7 @@ public class DLL {
         list.insertFirst(2);
         list.insertFirst(8);
         list.insertFirst(17);
+        list.insertLast(55);
 
         list.displayReverse();
     }
