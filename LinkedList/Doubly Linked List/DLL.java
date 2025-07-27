@@ -1,12 +1,16 @@
 public class DLL {
 
     private Node head;
+    private int size;
     // Why should you keep a tail?
     // If you keep a tail pointer:
     // You don’t have to traverse the list every time to find the last node.
     // Reverse traversal becomes O(n) → start directly from tail.
     // Adding elements at the end becomes very efficient (O(1) instead of O(n)).
 
+    public DLL() {
+        this.size = 0;
+    }
     private class Node {
         int val;
         Node next;
@@ -34,6 +38,8 @@ public class DLL {
             head.prev = newNode;
         }
         head = newNode;
+
+        size++;
     }
     
     // insert at last
@@ -55,26 +61,38 @@ public class DLL {
         last.next = newNode;
         newNode.prev = last;
 
+        size++;
     }
 
-    public void insertLast(int val) {
-        Node newNode = new Node(val);
-        Node last = head;
+    public void insertAtIndex(int val, int index) {
+        if (index < 0 || index > size) {
+            throw new IndexOutOfBoundsException("Invalid index");
+        }
 
-        newNode.next = null; // specification
-
-        if (head == null) { // empty list case
-            head = newNode;
+        if (index == 0) {
+            insertFirst(val);
             return;
         }
-        
-        while(last.next != null) {
-            last = last.next;
+
+        if (index == size) {  // inserting at end
+            insertLast(val);
+            return;
         }
 
-        last.next = newNode;
-        newNode.prev = last;
+        Node temp = get(index -1);
+        Node newNode = new Node(val, temp.next, temp);
+        temp.next.prev = newNode;
+        temp.next = newNode;
 
+        size++;
+    }
+
+    public Node get(int index) {
+        Node temp = head;
+        for (int i = 0; i < index; i++) {
+            temp = temp.next;
+        }
+        return temp;
     }
 
 
@@ -96,6 +114,10 @@ public class DLL {
         System.out.println("NULL/START");
     }
 
+    public int getSize() {
+        return size;
+    }
+
     public static void main(String[] args) {
         DLL list = new DLL();
         list.insertFirst(3);
@@ -103,6 +125,7 @@ public class DLL {
         list.insertFirst(8);
         list.insertFirst(17);
         list.insertLast(55);
+        list.insertAtIndex(67, 3);
 
         list.displayReverse();
     }
