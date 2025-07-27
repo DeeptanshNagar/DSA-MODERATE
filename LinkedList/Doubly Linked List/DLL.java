@@ -51,6 +51,7 @@ public class DLL {
 
         if (head == null) { // empty list case
             head = newNode;
+            size++;
             return;
         }
 
