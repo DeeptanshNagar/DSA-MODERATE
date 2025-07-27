@@ -29,7 +29,6 @@ public class DLL {
         }
     }
 
-    // insert at first
     public void insertFirst(int val) {
         Node newNode = new Node(val);
         newNode.next = head;
@@ -42,7 +41,6 @@ public class DLL {
         size++;
     }
     
-    // insert at last
     public void insertLast(int val) {
         Node newNode = new Node(val);
         Node last = head;
@@ -90,6 +88,36 @@ public class DLL {
         size++;
     }
 
+    public void deleteFirst() {
+        if (size == 0) {
+            System.out.println("List is already empty");
+            return;
+        }
+        if (head.next == null) {  // only one element in the list
+            head = null;
+        } else {
+            head = head.next;
+            head.prev = null;
+        }
+
+        size--;
+    }
+
+    public void deleteLast() {
+        if (size == 0) {
+            System.out.println("List is already empty");
+            return;
+        }
+        if (size == 1) {
+            deleteFirst();
+            return;
+        }
+        Node secondLast  = get(size - 2);
+        secondLast .next = null;
+
+        size--;
+    }
+
     public Node get(int index) {
         Node temp = head;
         for (int i = 0; i < index; i++) {
@@ -98,6 +126,31 @@ public class DLL {
         return temp;
     }
 
+    public void deleteAtIndex(int index) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("Invalid index");
+        }
+
+        if (index == 0) {           
+            deleteFirst();
+            return;
+        }
+
+        if (index == size - 1) { 
+            deleteLast();
+            return;
+        }
+
+        
+        Node prevNode = get(index - 1);
+        Node nodeToDelete = prevNode.next;
+
+        
+        prevNode.next = nodeToDelete.next;
+        nodeToDelete.next.prev = prevNode;
+
+        size--;
+    }
 
     public void displayReverse() {
         Node temp = head;
@@ -109,12 +162,12 @@ public class DLL {
         }
         System.out.println("NULL/END");
 
-        System.out.println("Print in reverse");
-        while (last != null) {
-            System.out.print(last.val + " -> ");
-            last = last.prev;
-        }
-        System.out.println("NULL/START");
+        // System.out.println("Print in reverse");
+        // while (last != null) {
+        //     System.out.print(last.val + " -> ");
+        //     last = last.prev;
+        // }
+        // System.out.println("NULL/START");
     }
 
     public int getSize() {
@@ -129,7 +182,8 @@ public class DLL {
         list.insertFirst(17);
         list.insertLast(55);
         list.insertAtIndex(67, 3);
-
+        list.displayReverse();
+        list.deleteAtIndex(4);
         list.displayReverse();
     }
 }
