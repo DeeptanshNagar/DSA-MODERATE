@@ -33,6 +33,65 @@ public class revisionDLL2 {
         size++;
     }
 
+    public void insertLast(int data) {
+        Node newNode = new Node(data);
+        Node temp = head;
+
+        if(head == null) {
+            head = newNode;
+            size++;
+            return;
+        }
+
+        while(temp.next != null) {
+            temp = temp.next;
+        }
+
+        temp.next = newNode;
+        newNode.prev = temp;
+        newNode.next = null;
+
+        size++;
+    }
+
+    public void insertAtIndex(int data, int index) {
+        Node newNode = new Node(data);
+
+        if (index < 0 || index > size) {
+            throw new IndexOutOfBoundsException("Invalid index");
+        }
+
+        if(index == 0) {
+            insertFirst(data);
+            return;
+        }
+
+        if(index == size) {
+            insertLast(data);
+            return;
+        }
+
+        Node temp = getNode(index - 1);
+        newNode.next = temp.next;
+        temp.next.prev = newNode;
+        temp.next = newNode;
+        newNode.prev = temp;
+
+        size++;
+    }
+
+    public Node getNode(int index) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("Invalid index");
+        }
+
+        Node temp = head;
+        for (int i = 0; i < index; i++) {
+            temp = temp.next;
+        }
+        return temp;
+    }
+
     public void display() {
         Node temp = head;
 
@@ -42,13 +101,17 @@ public class revisionDLL2 {
         }
 
         while (temp != null) {
-            System.out.print(temp.data + " -> "); // imp
-            // if (temp.next != null) {
-            //     System.out.print(" -> ");
-            // }
+            System.out.print(temp.data);
+            if (temp.next != null) {
+                System.out.print(" <-> ");
+            }
             temp = temp.next;
         }
-        System.out.println("NULL"); 
+        System.out.println(" -> NULL");
+    }
+
+    public int getSize() {
+        return size;
     }
 
     public static void main(String[] args) {
@@ -60,5 +123,13 @@ public class revisionDLL2 {
         list.insertFirst(20);
         list.display();
 
+        list.insertLast(24);
+        list.display();
+
+        list.insertAtIndex(28, 3);
+        list.display();
+
+
+        // System.out.println(list.getSize());
     }
 }
