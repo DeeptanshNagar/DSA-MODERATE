@@ -80,6 +80,47 @@ public class revisionDLL2 {
         size++;
     }
 
+    public void deleteFirst() {
+        if(head == null) {
+            System.out.println("List is already empty!");
+        }
+
+        head = head.next;
+
+        size--;
+    }
+
+    public void deleteLast() {
+        if(head == null) {
+            System.out.println("List is already empty!");
+        }
+        Node secondLast = head;
+        while(secondLast.next != null) {
+            secondLast = secondLast.next;
+        }
+        secondLast.prev.next = null;
+
+        size--;
+    }
+
+    public void deleteAtIndex(int index) {
+        if(index == 0) {
+            deleteFirst();
+            return;
+        }
+
+        if(index == size - 1) {
+            deleteLast();
+            return;
+        }
+
+        Node prevNode = getNode(index - 1);
+        prevNode.next = prevNode.next.next;
+        prevNode.next.next.prev = prevNode;
+
+        size--;
+    }
+    
     public Node getNode(int index) {
         if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException("Invalid index");
@@ -123,12 +164,17 @@ public class revisionDLL2 {
         list.insertFirst(20);
         list.display();
 
-        list.insertLast(24);
+        list.deleteAtIndex(2);
         list.display();
 
-        list.insertAtIndex(28, 3);
-        list.display();
+        // list.insertLast(24);
+        // list.display();
 
+        // list.insertAtIndex(28, 3);
+        // list.display();
+
+        // list.deleteLast();
+        // list.display();
 
         // System.out.println(list.getSize());
     }
