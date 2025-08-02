@@ -37,6 +37,21 @@ public class LL {
         size++;
     }
 
+    // inserting via recursion
+    public void insertRec(int value, int index) {
+        head = insertRec(value, index, head);
+    }
+    private Node insertRec(int value, int index, Node node) {
+        if (index == 0) {
+            Node newNode = new Node(value, node);
+            size++;
+            return newNode;
+        }
+
+        node.next = insertRec(value, index - 1 , node.next);
+        return node;
+    }
+
     // inserting at size - 1 index
     public void insertLast(int val) {
         if (tail == null) {
@@ -182,12 +197,14 @@ public class LL {
         list.deleteAtIndex(3); // works works
         list.display();
 
+        list.insertRec(45, 3);
+        list.display();
 
-        Node foundNode = list.find(9);
-        if (foundNode != null) {
-            System.out.println("Found node with value: " + foundNode.value);
-        } else {
-            System.out.println("Value not found in list");
-        }
+        // Node foundNode = list.find(9);
+        // if (foundNode != null) {
+        //     System.out.println("Found node with value: " + foundNode.value);
+        // } else {
+        //     System.out.println("Value not found in list");
+        // }
     }
 }
