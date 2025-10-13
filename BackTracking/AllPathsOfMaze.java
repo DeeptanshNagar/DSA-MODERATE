@@ -14,7 +14,7 @@ public class AllPathsOfMaze {
             // (2,0) (2,1) (2,2)
 
 
-
+            
             //rat maze problem
             // {true, false, false, false},
             // {true, true, false, true},
@@ -96,3 +96,4 @@ public class AllPathsOfMaze {
         path[row][col] = 0;
     }
 }
+
