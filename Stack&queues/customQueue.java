@@ -43,4 +43,17 @@ public class customQueue {
         end--;
         return removed; 
     }
+    public int front() throws Exception {
+        if(isEmpty()){
+            throw new Exception("Queue is empty");
+        }
+        return data[0];
+    }
+
+    public void display() {
+        for (int i = 0; i < end; i++) {
+            System.out.print(data[i] + " <- ");
+        }
+        System.out.println("END");
+    }
 }
