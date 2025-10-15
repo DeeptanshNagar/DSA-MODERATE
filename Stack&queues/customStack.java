@@ -27,7 +27,7 @@ public class customStack {
     }
 
     public boolean isEmpty() {
-        return ptr == - 1;
+        return ptr == -1;
     }
 
     public int pop() throws stackException{
