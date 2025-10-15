@@ -15,18 +15,18 @@ public class customStack {
     // conclusion - You get flexibility — default behavior for lazy people, and customization for those who need it.
     public boolean push(int item) {
         if(isFull()){
-            System.out.println("Stack is full.!");
+            System.out.println("Stack is full...!");
         }
         ptr++;
         data[ptr] = item;
         return true;
     } 
 
-    private boolean isFull() {
+    public boolean isFull() {
         return ptr == data.length - 1; // ptr is at last index
     }
 
-    private boolean isEmpty() {
+    public boolean isEmpty() {
         return ptr == - 1;
     }
 
