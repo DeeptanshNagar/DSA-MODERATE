@@ -1,6 +1,7 @@
 public class customStack {
-    protected int[] data;
-    private static final int DEFAULT_SIZE = 10;
+    protected int[] data; // protected means accessible in same package and subclasses.
+    private static final int DEFAULT_SIZE = 10; // pointer to the top element
+    // private - visible only inside this class.
 
 
     int ptr = -1;
@@ -10,17 +11,21 @@ public class customStack {
     }
 
     public customStack(int size) {
+        if (size <= 0) {
+            throw new IllegalArgumentException("Size must be greater than 0!");
+        }
         this.data = new int[size];
     }
     // conclusion - You get flexibility — default behavior for lazy people, and customization for those who need it.
     public boolean push(int item) {
         if(isFull()){
-            System.out.println("Stack is full...!");
+            System.out.println("Stack is full...! Cannot push " + item);
+            return false;
         }
         ptr++;
         data[ptr] = item;
         return true;
-    } 
+    }
 
     public boolean isFull() {
         return ptr == data.length - 1; // ptr is at last index
@@ -44,9 +49,26 @@ public class customStack {
         if(isEmpty()) {
             throw new stackException("Cannot peak from an empty stack!!");
         }
-        return data[ptr];
+        return data[ptr]; // see top element without removing it.
 
     }
+
+    public int size() {
+        return ptr + 1;
+    }
+
+    public void display() {
+        if (isEmpty()) {
+            System.out.println("Stack is empty.");
+            return;
+        }
+        System.out.print("Stack elements: ");
+        for (int i = 0; i <= ptr; i++) {
+            System.out.print(data[i] + " ");
+        }
+        System.out.println();
+    }
+
     public static void main(String[] args) {
         
     }
