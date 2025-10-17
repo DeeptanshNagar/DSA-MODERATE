@@ -14,7 +14,7 @@ public class customQueue {
     }
 
     public boolean isFull() {
-        return end == data.length; // ptr is at last index
+        return end == data.length; // end is at last index
     }
 
     public boolean isEmpty() {
@@ -57,3 +57,12 @@ public class customQueue {
         System.out.println("END");
     }
 }
+
+
+/*
+
+Code correctly kaam kar raha hai
+Par inefficient hai because of shifting
+Circular queue use karenge for O(1) operations!
+
+ */
