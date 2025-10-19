@@ -1,32 +1,35 @@
-public class customQueue {
-    private int[] data;
+public class CircularQueue {
+    protected  int[] data;
 
     private static final int DEFAULT_SIZE = 10;
 
-    int end = 0;
+    protected int end = 0;
+    protected int front = 0;
+    private int size = 0;
 
-    public customQueue() {
+    public CircularQueue() {
         this(DEFAULT_SIZE);
     }
 
-    public customQueue(int size) {
+    public CircularQueue(int size) {
         this.data = new int[size];
     }
 
     public boolean isFull() {
-        return end == data.length; // end is at last index
+        return size == data.length; // end is at last index
     }
 
     public boolean isEmpty() {
-        return end == 0;
+        return size == 0;
     }
-
     public boolean insert(int item) {
         if(isFull()) {
             return false;
         }
 
         data[end++] = item;
+        end = end % data.length;
+        size++;
         return true; 
     }
 
@@ -34,35 +37,23 @@ public class customQueue {
         if(isEmpty()) {
             throw new Exception("Queue is Empty");
         }
-        int removed = data[0];
-
-        // shift the elements to left
-        for (int i = 1; i < end; i++) {
-            data[i-1] = data[i];
-        }
-        end--;
+        int removed = data[front++];
+        front = front % data.length;
+        size--;
         return removed; 
     }
+
     public int front() throws Exception {
         if(isEmpty()){
             throw new Exception("Queue is empty");
         }
-        return data[0];
+        return data[front];
     }
 
     public void display() {
-        for (int i = 0; i < end; i++) {
+        for (int i = front; i < end; i++) {
             System.out.print(data[i] + " <- ");
         }
         System.out.println("END");
     }
 }
-
-
-/*
-
-Code correctly kaam kar raha hai
-Par inefficient hai because of shifting - { O(n) }
-Circular queue use karenge for O(1) operations!
-
- */
