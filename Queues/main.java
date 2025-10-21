@@ -29,9 +29,9 @@ public class main {
         queue2.add(2); // Enqueue
         queue2.add(3); // Enqueue
         System.out.println(queue2);
-        Integer i = queue2.remove();
+        queue2.remove();
         System.out.println(queue2); // Dequeue
         System.out.println(queue2.peek()); // front most element in the queue.
     }
 
-}
+} 
