@@ -1,5 +1,5 @@
 public class circularMain {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         CircularQueue queue = new CircularQueue(5);
         queue.insert(3);
         queue.insert(6);
@@ -10,6 +10,8 @@ public class circularMain {
         queue.display();
 
         System.out.println(queue.remove());
+        // queue.insert(133);
         queue.display();
-    }
+    } // Complexity - O(1)
+    // for display - O(N)
 }

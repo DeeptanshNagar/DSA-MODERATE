@@ -1,6 +1,5 @@
 public class CircularQueue {
     protected  int[] data;
-
     private static final int DEFAULT_SIZE = 10;
 
     protected int end = 0;
@@ -16,7 +15,7 @@ public class CircularQueue {
     }
 
     public boolean isFull() {
-        return size == data.length; // end is at last index
+        return size == data.length;
     }
 
     public boolean isEmpty() {
@@ -51,9 +50,16 @@ public class CircularQueue {
     }
 
     public void display() {
-        for (int i = front; i < end; i++) {
-            System.out.print(data[i] + " <- ");
+        if(isEmpty()) {
+            System.out.println("Empty");
+            return;
         }
+        int i = front;
+        do { 
+            System.out.print(data[i] + " -> ");
+            i++;
+            i = i % data.length;
+        } while (i != end);
         System.out.println("END");
     }
 }
