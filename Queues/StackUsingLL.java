@@ -5,7 +5,7 @@ import java.util.*;
 // Queue - A data structure that works on the FIFO (First-In-First-Out) principle
 // Elements are added at the end and removed from the front
 
-public class main {
+public class StackUsingLL {
     public static void main(String[] args) {
         LinkedList<Integer> stack = new LinkedList<>();
         stack.addFirst(3); // push
