@@ -12,7 +12,7 @@ public class OrderAgnosticBS {
         int end = arr.length-1;
 
         // find whether the array is sorted in ascending or descending
-        boolean isAsc = arr[start] < arr[end];
+        Boolean isAsc = arr[start] < arr[end];
         while(start <= end) {
             // find the middle element 
             // int mid = (start + end) / 2;  // might be possible that start + end exceeds the range of int in java
