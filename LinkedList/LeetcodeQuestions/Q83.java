@@ -24,7 +24,7 @@ public class Q83 {
             tail = head;
         }
     }
-
+    
     public void insertLast(int val) {
         if (tail == null) {
             insertFirst(val);
@@ -73,3 +73,4 @@ public class Q83 {
         
     }
 }
+
