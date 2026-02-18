@@ -3,8 +3,8 @@ public class main {
 		print(1);
 	}
 	static void print(int n) {
-		if(n == 6) {
-			System.out.println("6");
+		if(n == 5) {
+			System.out.println("5");
 			return;
 		}
 		System.out.println(n);
