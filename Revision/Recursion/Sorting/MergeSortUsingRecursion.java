@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 public class MergeSortUsingRecursion {
 	public static void main(String[] args) {
-		int[] arr = {4, 1, 7, 5, 9, 6};
+		int[] arr = {40, 30, 20, 10, 0};
 		System.out.println(Arrays.toString(mergeSort(arr)));
 	}
 
