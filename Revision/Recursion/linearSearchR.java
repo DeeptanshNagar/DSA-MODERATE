@@ -3,11 +3,15 @@ import java.util.ArrayList;
 public class linearSearchR {
 	public static void main(String[] args) {
 		int[] arr = {2, 3, 6, 7, 88, 12, 12, 33};
+
+		findAllIndex(arr, 12, 0);
+		System.out.println(list);
+
 		// ArrayList<Integer> ans = findAllIndex2(arr, 12, 0, new ArrayList<>());
 		// System.out.println(ans);
 
-		ArrayList<Integer> ans = findAllIndex3(arr, 12, 0);
-		System.out.println(ans);
+		// ArrayList<Integer> ans = findAllIndex3(arr, 12, 0);
+		// System.out.println(ans);
 	}
 
 	static boolean searchElement(int[] arr) {
@@ -59,9 +63,11 @@ public class linearSearchR {
 		if(index == arr.length) {
 			return list;
 		}
+
 		if(arr[index] == target) {
 			list.add(index);
 		}
+
 		return findAllIndex2(arr, target, index + 1, list);
 	}
 
