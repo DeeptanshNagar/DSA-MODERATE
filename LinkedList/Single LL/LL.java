@@ -1,7 +1,7 @@
 public class LL {
     // pointers
     private Node head;
-    private Node tail;
+    private Node tail; // introducing tail pointer because without it, inserting at the end requires traversing the whole list — O(n). With tail, it's O(1).
     private int size;
 
     // size of list
@@ -43,6 +43,7 @@ public class LL {
     }
     private Node insertRec(int value, int index, Node node) {
         if (index == 0) {
+
             Node newNode = new Node(value, node);
             size++;
             return newNode;
@@ -68,10 +69,12 @@ public class LL {
 
     // inserting at any index
     public void insertAtIndex(int val, int index) {
+		
         if(index == 0) {
             insertFirst(val);
             return;
         }
+
         if(index == size) {
             insertLast(val);
             return;
