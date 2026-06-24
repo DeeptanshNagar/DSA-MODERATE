@@ -16,7 +16,7 @@ public class CLL {
         }
     }
 
-    public void insertFirst(int value) {
+    public void insert(int value) {
         Node newNode = new Node(value);
         if(head == null) {
             head = newNode;
@@ -42,11 +42,11 @@ public class CLL {
 
     public static void main(String[] args) {
         CLL list = new CLL();
-        list.insertFirst(1);
-        list.insertFirst(2);
-        list.insertFirst(3);
-        list.insertFirst(4);
-        list.insertFirst(5);
+        list.insert(1);
+        list.insert(2);
+        list.insert(3);
+        list.insert(4);
+        list.insert(5);
 
         list.display();
     }

@@ -48,6 +48,7 @@ public class DLL {
         newNode.next = null; // specification
 
         if (head == null) { // empty list case
+			newNode.prev = null;
             head = newNode;
             size++;
             return;
@@ -78,7 +79,7 @@ public class DLL {
             return;
         }
 
-        Node temp = get(index -1);
+        Node temp = get(index - 1);
         Node newNode = new Node(val, temp.next, temp);
         if (temp.next != null) {
             temp.next.prev = newNode;
@@ -113,7 +114,7 @@ public class DLL {
             return;
         }
         Node secondLast  = get(size - 2);
-        secondLast .next = null;
+        secondLast.next = null;
 
         size--;
     }
