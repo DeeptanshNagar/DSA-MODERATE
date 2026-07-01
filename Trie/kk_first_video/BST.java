@@ -1,3 +1,4 @@
+package kk_first_video;
 public class BST {
 	public class Node {
 		private int value;
@@ -55,13 +56,7 @@ public class BST {
 		return node;
 	}
 
-	public void populate(int[] nums) {
-		for (int i = 0; i < nums.length; i++) {
-			this.insert(nums[i]);
-		}
-	}
-
-	public boolean balaanced() {
+	public boolean balanced() {
 		return balanced(root);
 	}
 
@@ -70,6 +65,29 @@ public class BST {
 			return true;
 		}
 		return Math.abs(height(node.left) - height(node.right)) <= 1 && balanced(node.left) && balanced(node.right);
+	}
+
+	public void populate(int[] nums) {
+		for (int i = 0; i < nums.length; i++) {
+			this.insert(nums[i]);
+		}
+	}
+
+	public void populatedSorted(int[] nums) {
+		populatedSorted(nums, 0, nums.length);
+	}
+
+	private void populatedSorted(int[] nums, int start, int end) {
+		if(start >= end) {
+			return;
+		}
+
+		int mid = (start + end) / 2;
+
+		this.insert(nums[mid]);
+
+		populatedSorted(nums, start, mid);
+		populatedSorted(nums, mid + 1, end);
 	}
 
 	public void display() {
@@ -88,9 +106,12 @@ public class BST {
 
 	public static void main(String[] args) {
 		BST tree = new BST();
-		int[] nums = {5, 2, 7, 1, 4, 6, 9, 8, 3, 10};
-		tree.populate(nums);
+		// int[] nums = {5, 2, 7, 1, 4, 6, 9, 8, 3, 10};
+		// tree.populate(nums);
+
+		int[] nums = {1, 2, 3, 4, 5, 6, 7, 8 , 9, 10};
+		tree.populatedSorted(nums);
+
 		tree.display();
 	}
-
 }
